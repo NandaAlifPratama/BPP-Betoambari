@@ -19,7 +19,11 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container px-5">
                     <a class="navbar-brand" href="index.html" style="animation: fadeIn 2s;">BPP betoambari</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -47,6 +51,39 @@
                         @keyframes fadeIn {
                             from { opacity: 0; }
                             to { opacity: 1; }
+                        }
+                        
+                        .navbar-toggler {
+                            position: relative;
+                            width: 30px;
+                            height: 20px;
+                            background: transparent;
+                            border: none;
+                            cursor: pointer;
+                            padding: 0;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                        }
+
+                        .navbar-toggler span {
+                            display: block;
+                            width: 100%;
+                            height: 2px;
+                            background-color: white;
+                            transition: all 0.3s ease;
+                        }
+
+                        .navbar-toggler[aria-expanded="true"] span:nth-child(1) {
+                            transform: translateY(9px) rotate(45deg);
+                        }
+
+                        .navbar-toggler[aria-expanded="true"] span:nth-child(2) {
+                            opacity: 0;
+                        }
+
+                        .navbar-toggler[aria-expanded="true"] span:nth-child(3) {
+                            transform: translateY(-9px) rotate(-45deg);
                         }
                     </style>
                 </div>
@@ -91,24 +128,52 @@
                         <div class="col-lg-8">
                             <div class="row gx-5 row-cols-1 row-cols-md-2">
                                 <div class="col mb-5 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                                    <h2 class="h5">Kegiatan KSM Kampus UMU Buton 2025</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                    <a href="blog-post.html" class="text-decoration-none">
+                                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3 hover-feature"><i class="bi bi-collection"></i></div>
+                                        <h2 class="h5">Kegiatan KSM Kampus UMU Buton 2025</h2>
+                                        <style>
+                                            .hover-feature:hover {
+                                                background: linear-gradient(to right, #28a745, #20c997) !important;
+                                                transition: background 0.3s ease;
+                                            }
+                                        </style>
+                                    </a>
                                 </div>
                                 <div class="col mb-5 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-calendar2-minus"></i></div>
-                                    <h2 class="h5">Daftar Mahasiswa KSM UMU Buton 2025</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                    <a href="portfolio-overview.html" class="text-decoration-none">
+                                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3 hover-feature"><i class="bi bi-collection"></i></div>
+                                        <h2 class="h5">Daftar Mahasiswa KSM UMU Buton 2025</h2>
+                                        <style>
+                                            .hover-feature:hover {
+                                                background: linear-gradient(to right, #28a745, #20c997) !important;
+                                                transition: background 0.3s ease;
+                                            }
+                                        </style>
+                                    </a>
                                 </div>
                                 <div class="col mb-5 mb-md-0 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-camera-fill"></i></div>
-                                    <h2 class="h5">Kegiatan</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                    <a href="blog-post.html" class="text-decoration-none">
+                                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3 hover-feature"><i class="bi bi-camera-fill"></i></div>
+                                        <h2 class="h5">Kegiatan</h2>
+                                        <style>
+                                            .hover-feature:hover {
+                                                background: linear-gradient(to right, #28a745, #20c997) !important;
+                                                transition: background 0.3s ease;
+                                            }
+                                        </style>
+                                    </a>
                                 </div>
                                 <div class="col h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-cart-plus"></i></div>
-                                    <h2 class="h5">list and check out product</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                    <a href="check-out.html" class="text-decoration-none">
+                                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3 hover-feature"><i class="bi bi-cart-plus"></i></div>
+                                        <h2 class="h5">Daftar dan Checkout Produk</h2>
+                                        <style>
+                                            .hover-feature:hover {
+                                                background: linear-gradient(to right, #28a745, #20c997) !important;
+                                                transition: background 0.3s ease;
+                                            }
+                                        </style>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -121,11 +186,11 @@
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-10 col-xl-7">
                             <div class="text-center">
-                                <div class="fs-4 mb-4 fst-italic">"nanti tulis saja kata kata dari beliau!"</div>
+                                <div class="fs-4 mb-4 fst-italic">"Kami sangat bangga dapat bekerja sama dengan KSM UMU Buton dalam pengembangan budidaya buah naga. Semangat dan dedikasi mahasiswa dalam belajar dan mengaplikasikan ilmu pertanian sangat menginspirasi. Mari kita terus berkolaborasi untuk kemajuan pertanian di Buton."</div>
                                 <div class="d-flex align-items-center justify-content-center">
                                     <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                                     <div class="fw-bold">
-                                        (NAMA KEPALA BPP)
+                                        SYAFARUDDIN, S.IP
                                         <span class="fw-bold text-primary mx-1">/</span>
                                         Kepala BPP Betoambari
                                     </div>
