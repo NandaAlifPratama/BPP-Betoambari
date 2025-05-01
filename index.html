@@ -36,6 +36,17 @@
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
                                     <li><a class="dropdown-item" href="index.html">Blog Home</a></li>
                                     <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
+                                    <li><a class="dropdown-item" href="admin-panel.html" onclick="return checkAdminAccess()">panel admin</a></li>
+                                    <script>
+                                        function checkAdminAccess() {
+                                            const isAdmin = false; // Replace this with a real check from your database or backend
+                                            if (!isAdmin) {
+                                                alert("Anda tidak memiliki akses ke halaman ini.");
+                                                return false;
+                                            }
+                                            return true;
+                                        }
+                                    </script>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
