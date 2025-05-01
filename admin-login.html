@@ -27,7 +27,7 @@
     {
       if(output == 'TRUE')
       {
-         var url1 ='https://t1js5pdwdqczrcuosbwpjq-on.drv.tw/PPDBTEST/';
+         var url1 ='http://127.0.0.1:5500/admin-panel.html';
          var winRef = window.open(url1);
          winRef ? google.script.host.close() : window.onload=function(){document.getElementById('url').href = url1;}    
       }
