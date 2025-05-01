@@ -46,24 +46,58 @@
                 </div>
             </nav>
             <!-- Header-->
-            <header class="py-5">
+            <header class="py-5" style="background: url('assets/images/kantor.jpg') no-repeat center center; background-size: cover; animation: slideBg 10s infinite linear;">
                 <div class="container px-5">
                     <div class="row justify-content-center">
                         <div class="col-lg-8 col-xxl-6">
-                            <div class="text-center my-5">
-                                <h1 class="fw-bolder mb-3">Selamat Datang di Website KSM UMU Buton</h1>
-                                <p class="lead fw-normal text-muted mb-4">Kami adalah Kelompok Studi Mahasiswa Universitas Muslim Buton yang berkomitmen untuk mengembangkan potensi mahasiswa melalui berbagai kegiatan akademik dan non-akademik. Website ini dibuat sebagai sarana informasi dan komunikasi untuk seluruh anggota KSM UMU Buton.</p>
-                                <a class="btn btn-primary btn-lg" href="#scroll-target">Read our story</a>
+                            <div class="text-center my-5 text-black"></div>
+                                <h1 class="fw-bolder mb-3 text-white text-shadow">Selamat Datang di Website KSM UMU Buton</h1>
+                                <p class="lead fw-normal text-white text-shadow mb-4">Kami adalah Kelompok Studi Mahasiswa Universitas Muslim Buton yang berkomitmen untuk mengembangkan potensi mahasiswa melalui berbagai kegiatan akademik dan non-akademik. Website ini dibuat sebagai sarana informasi dan komunikasi untuk seluruh anggota KSM UMU Buton.</p>
+                                <a class="btn btn-primary btn-lg shadow-lg" href="#scroll-target">Read our story</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
+
+            <style>
+                @keyframes slideBg {
+                    0% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                    100% { background-position: 0% 50%; }
+                }
+            </style>
             <!-- About section one-->
             <section class="py-5 bg-light" id="scroll-target">
                 <div class="container px-5 my-5">
                     <div class="row gx-5 align-items-center">
-                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="assets/images/foto1.jpg" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img class="img-fluid rounded mb-5 mb-lg-0" src="assets/images/foto1.jpg" alt="..." />
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="img-fluid rounded mb-5 mb-lg-0" src="assets/images/pohon2.jpeg" alt="..." />
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExample" role="button" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                        <script>
+                            const carouselElement = document.querySelector('#carouselExample');
+                            const carousel = new bootstrap.Carousel(carouselElement, {
+                                interval: 2000, // 2 seconds
+                                ride: 'carousel'
+                            });
+                        </script>
                         <div class="col-lg-6">
                             <h2 class="fw-bolder">Tujuan Kami</h2>
                             <p class="lead fw-normal text-muted mb-0">BPP Betoambari dengan tujuan untuk meningkatkan kualitas pelayanan dan pengembangan masyarakat melalui berbagai kegiatan yang mendukung pengembangan potensi, kreativitas, dan inovasi. Kami berkomitmen untuk menciptakan lingkungan kerja yang kondusif serta membangun jaringan yang kuat antar masyarakat.</p>
@@ -84,7 +118,7 @@
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top" src="assets/images/buah.jpg" alt="Produk 1" />
                                 <div class="card-body p-4">
-                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">New</div>
+                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Ready</div>
                                     <h5 class="card-title mb-3">Buah Segar Lokal</h5>
                                     <p class="card-text mb-0">Buah-buahan segar hasil panen harga terjangkau.</p>
                                 </div>
@@ -104,7 +138,7 @@
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top" src="assets/images/buah.jpg" alt="Produk 1" />
                                 <div class="card-body p-4">
-                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Best Seller</div>
+                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Ready</div>
                                     <h5 class="card-title mb-3">Buah Segar Lokal</h5>
                                     <p class="card-text mb-0">Buah-buahan segar hasil panen harga terjangkau.</p>
                                 </div>
@@ -130,6 +164,77 @@
                         <div class="col-lg-6">
                             <h2 class="fw-bolder">Visi KSM UMU Buton</h2>
                             <p class="lead fw-normal text-muted mb-0">Menjadi wadah pengembangan kompetensi mahasiswa Agroteknologi yang unggul dalam bidang pertanian modern, khususnya budidaya buah naga, melalui pembelajaran langsung di BPP Betoambari untuk menghasilkan lulusan yang berdaya saing dan berwawasan lingkungan.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Payment Info Section -->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="text-center">
+                        <h2 class="fw-bolder">Informasi Pembayaran</h2>
+                        <p class="lead fw-normal text-muted mb-5">Pilih metode pembayaran yang sesuai untuk Anda</p>
+                    </div>
+                    <div class="row gx-5 row-cols-1 row-cols-md-2 row-cols-lg-3">
+                        <!-- DANA -->
+                        <div class="col mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <div class="card-body text-center">
+                                    <img src="assets/images/logodana.png" alt="DANA Logo" class="mb-3" style="width: 100px; height: auto;">
+                                    <h5 class="card-title fw-bolder">DANA</h5>
+                                    <p class="card-text">Nomor: <strong>0812-3456-7890</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ShopeePay -->
+                        <div class="col mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <div class="card-body text-center">
+                                    <img src="assets/images/logoShopeepay.png" alt="ShopeePay Logo" class="mb-3" style="width: 100px; height: auto;">
+                                    <h5 class="card-title fw-bolder">ShopeePay</h5>
+                                    <p class="card-text">Nomor: <strong>0812-3456-7890</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Transfer Rekening BRI -->
+                        <div class="col mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <div class="card-body text-center">
+                                    <img src="assets/images/logoBRI.png" alt="BRI Logo" class="mb-3" style="width: 100px; height: auto;">
+                                    <h5 class="card-title fw-bolder">Transfer Rekening BRI</h5>
+                                    <p class="card-text">Nomor Rekening: <strong>1234-5678-9012</strong><br>Atas Nama: <strong>Nama Anda</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Brimo -->
+                        <div class="col mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <div class="card-body text-center">
+                                    <img src="assets/images/logoBRIMO.jpg" alt="Brimo Logo" class="mb-3" style="width: 50px; height: auto;">
+                                    <h5 class="card-title fw-bolder">Brimo</h5>
+                                    <p class="card-text">Nomor Rekening: <strong>1234-5678-9012</strong><br>Atas Nama: <strong>Nama Anda</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- BNI -->
+                        <div class="col mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <div class="card-body text-center">
+                                    <img src="assets/images/logoBNI.png" alt="BNI Logo" class="mb-3" style="width: 100px; height: auto;">
+                                    <h5 class="card-title fw-bolder">BNI</h5>
+                                    <p class="card-text">Nomor Rekening: <strong>9876-5432-1098</strong><br>Atas Nama: <strong>Nama Anda</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bank Sultra -->
+                        <div class="col mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <div class="card-body text-center">
+                                    <img src="assets/images/logoBankSultra.jpg" alt="Bank Sultra Logo" class="mb-3" style="width: 100px; height: auto;">
+                                    <h5 class="card-title fw-bolder">Bank Sultra</h5>
+                                    <p class="card-text">Nomor Rekening: <strong>5678-1234-9012</strong><br>Atas Nama: <strong>Nama Anda</strong></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
