@@ -118,7 +118,7 @@
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top" src="assets/images/buah.jpg" alt="Produk 1" />
                                 <div class="card-body p-4">
-                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Ready</div>
+                                    <div class="badge bg-danger bg-gradient rounded-pill mb-2">Not Ready</div>
                                     <h5 class="card-title mb-3">Buah Segar Lokal</h5>
                                     <p class="card-text mb-0">Buah-buahan segar hasil panen harga terjangkau.</p>
                                 </div>
@@ -138,7 +138,7 @@
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top" src="assets/images/buah.jpg" alt="Produk 1" />
                                 <div class="card-body p-4">
-                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Ready</div>
+                                    <div class="badge bg-danger bg-gradient rounded-pill mb-2">Not Ready</div>
                                     <h5 class="card-title mb-3">Buah Segar Lokal</h5>
                                     <p class="card-text mb-0">Buah-buahan segar hasil panen harga terjangkau.</p>
                                 </div>
@@ -156,6 +156,44 @@
                     </div>
                 </div>
             </section>
+            <!-- Countdown Timer Section -->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="text-center">
+                        <h2 class="fw-bolder">Countdown to 5 June 2025</h2>
+                        <p class="lead fw-normal text-muted mb-5">Stay tuned for the big day!</p>
+                    </div>
+                    <div class="text-center">
+                        <div id="countdown" class="fs-1 fw-bold text-success"></div>
+                    </div>
+                </div>
+            </section>
+
+            <script>
+                const countdownElement = document.getElementById('countdown');
+                const targetDate = new Date('June 5, 2025 00:00:00').getTime();
+
+                function updateCountdown() {
+                    const now = new Date().getTime();
+                    const timeLeft = targetDate - now;
+
+                    if (timeLeft <= 0) {
+                        countdownElement.textContent = "The day has arrived!";
+                        clearInterval(timerInterval);
+                        return;
+                    }
+
+                    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                    countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                }
+
+                const timerInterval = setInterval(updateCountdown, 1000);
+                updateCountdown();
+            </script>
             <!-- About section two-->
             <section class="py-5">
                 <div class="container px-5 my-5">
@@ -182,7 +220,7 @@
                                 <div class="card-body text-center">
                                     <img src="assets/images/logodana.png" alt="DANA Logo" class="mb-3" style="width: 100px; height: auto;">
                                     <h5 class="card-title fw-bolder">DANA</h5>
-                                    <p class="card-text">Nomor: <strong>0812-3456-7890</strong></p>
+                                    <p class="card-text">Nomor: <strong>-</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -192,7 +230,7 @@
                                 <div class="card-body text-center">
                                     <img src="assets/images/logoShopeepay.png" alt="ShopeePay Logo" class="mb-3" style="width: 100px; height: auto;">
                                     <h5 class="card-title fw-bolder">ShopeePay</h5>
-                                    <p class="card-text">Nomor: <strong>0812-3456-7890</strong></p>
+                                    <p class="card-text">Nomor: <strong>-</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -202,7 +240,7 @@
                                 <div class="card-body text-center">
                                     <img src="assets/images/logoBRI.png" alt="BRI Logo" class="mb-3" style="width: 100px; height: auto;">
                                     <h5 class="card-title fw-bolder">Transfer Rekening BRI</h5>
-                                    <p class="card-text">Nomor Rekening: <strong>1234-5678-9012</strong><br>Atas Nama: <strong>Nama Anda</strong></p>
+                                    <p class="card-text">Nomor Rekening: <strong>-</strong><br>Atas Nama: <strong>-</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -212,7 +250,7 @@
                                 <div class="card-body text-center">
                                     <img src="assets/images/logoBRIMO.jpg" alt="Brimo Logo" class="mb-3" style="width: 50px; height: auto;">
                                     <h5 class="card-title fw-bolder">Brimo</h5>
-                                    <p class="card-text">Nomor Rekening: <strong>1234-5678-9012</strong><br>Atas Nama: <strong>Nama Anda</strong></p>
+                                    <p class="card-text">Nomor Rekening: <strong>-</strong><br>Atas Nama: <strong>-</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -222,7 +260,7 @@
                                 <div class="card-body text-center">
                                     <img src="assets/images/logoBNI.png" alt="BNI Logo" class="mb-3" style="width: 100px; height: auto;">
                                     <h5 class="card-title fw-bolder">BNI</h5>
-                                    <p class="card-text">Nomor Rekening: <strong>9876-5432-1098</strong><br>Atas Nama: <strong>Nama Anda</strong></p>
+                                    <p class="card-text">Nomor Rekening: <strong>-</strong><br>Atas Nama: <strong>-</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -232,7 +270,7 @@
                                 <div class="card-body text-center">
                                     <img src="assets/images/logoBankSultra.jpg" alt="Bank Sultra Logo" class="mb-3" style="width: 100px; height: auto;">
                                     <h5 class="card-title fw-bolder">Bank Sultra</h5>
-                                    <p class="card-text">Nomor Rekening: <strong>5678-1234-9012</strong><br>Atas Nama: <strong>Nama Anda</strong></p>
+                                    <p class="card-text">Nomor Rekening: <strong>-</strong><br>Atas Nama: <strong>-</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -257,15 +295,15 @@
                         <div class="col mb-5 mb-5 mb-xl-0">
                             <div class="text-center">
                                 <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
-                                <h5 class="fw-bolder">Sri Yanti</h5>
-                                <div class="fst-italic text-muted">CFO</div>
+                                <h5 class="fw-bolder">Sri Noviyanti</h5>
+                                <div class="fst-italic text-muted">Sektretaris</div>
                             </div>
                         </div>
                         <div class="col mb-5 mb-5 mb-sm-0">
                             <div class="text-center">
                                 <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
                                 <h5 class="fw-bolder">Imelsyah Ramo</h5>
-                                <div class="fst-italic text-muted">Pembuatan Pupuk Organik Cair</div>
+                                <div class="fst-italic text-muted">Bendahara</div>
                             </div>
                         </div>
                         <div class="col mb-5">
