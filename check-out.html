@@ -123,13 +123,18 @@
                                     <p class="card-text mb-0">Buah-buahan segar hasil panen harga terjangkau.</p>
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <div class="text-muted">Harga:</div>
-                                            <div class="ms-2 fw-bold">Rp 25.000/Kg</div>
+                                    <form class="wa-order-form" data-produk="Buah Segar Lokal">
+                                        <div class="mb-2">
+                                            <input type="number" class="form-control" name="jumlah" placeholder="Jumlah (Kg)" min="1" required>
                                         </div>
-                                        <a class="btn btn-primary" href="https://wa.me/6282350430732">Beli Sekarang</a>
-                                    </div>
+                                        <div class="mb-2">
+                                            <input type="text" class="form-control" name="nama" placeholder="Nama Pemesan" required>
+                                        </div>
+                                        <div class="mb-2">
+                                            <input type="text" class="form-control" name="alamat" placeholder="Alamat Pemesan" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100">Beli Sekarang</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -143,25 +148,44 @@
                                     <p class="card-text mb-0">Buah-buahan segar hasil panen harga terjangkau.</p>
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                    <div class="d-flex align-items-end justify-content-between">
-                                        <div class="d-flex align-items-center">
-                                            <div class="text-muted">Harga:</div>
-                                            <div class="ms-2 fw-bold">Rp 25.000/Kg</div>
+                                    <form class="wa-order-form" data-produk="Buah Segar Lokal">
+                                        <div class="mb-2">
+                                            <input type="number" class="form-control" name="jumlah" placeholder="Jumlah (Kg)" min="1" required>
                                         </div>
-                                        <a class="btn btn-primary" href="https://wa.me/6282350430732">Beli Sekarang</a>
-                                    </div>
+                                        <div class="mb-2">
+                                            <input type="text" class="form-control" name="nama" placeholder="Nama Pemesan" required>
+                                        </div>
+                                        <div class="mb-2">
+                                            <input type="text" class="form-control" name="alamat" placeholder="Alamat Pemesan" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100">Beli Sekarang</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            <script>
+            document.querySelectorAll('.wa-order-form').forEach(function(form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const produk = form.getAttribute('data-produk');
+                    const jumlah = form.jumlah.value;
+                    const nama = form.nama.value;
+                    const alamat = form.alamat.value;
+                    const pesan = `Halo, saya ingin memesan:\nProduk: ${produk}\nJumlah: ${jumlah} Kg\nNama: ${nama}\nAlamat: ${alamat}`;
+                    const url = `https://wa.me/6282350430732?text=${encodeURIComponent(pesan)}`;
+                    window.open(url, '_blank');
+                });
+            });
+            </script>
             <!-- Countdown Timer Section -->
             <section class="py-5 bg-light">
                 <div class="container px-5 my-5">
                     <div class="text-center">
-                        <h2 class="fw-bolder">Countdown to 5 June 2025</h2>
-                        <p class="lead fw-normal text-muted mb-5">Stay tuned for the big day!</p>
+                        <h2 class="fw-bolder">5 June 2025</h2>
+                        <p class="lead fw-normal text-muted mb-5">estimasi pembuahan buah naga!</p>
                     </div>
                     <div class="text-center">
                         <div id="countdown" class="fs-1 fw-bold text-success"></div>
