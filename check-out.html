@@ -46,13 +46,16 @@
                 </div>
             </nav>
             <!-- Header-->
-            <header class="py-5" style="background: url('assets/images/kantor.jpg') no-repeat center center; background-size: cover; animation: slideBg 10s infinite linear;">
-                <div class="container px-5">
+            <header class="py-5" style="position: relative; background: url('assets/images/kantor.jpg') no-repeat center center; background-size: cover; animation: slideBg 10s infinite linear;">
+                <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(128,128,128,0.7) 0%, rgba(200,200,200,0.5) 100%); z-index: 1;"></div>
+                <div class="container px-5" style="position: relative; z-index: 2;">
                     <div class="row justify-content-center">
                         <div class="col-lg-8 col-xxl-6">
-                            <div class="text-center my-5 text-black"></div>
-                                <h1 class="fw-bolder mb-3 text-white text-shadow">Selamat Datang di Website KSM UMU Buton</h1>
-                                <p class="lead fw-normal text-white text-shadow mb-4">Kami adalah Kelompok Studi Mahasiswa Universitas Muslim Buton yang berkomitmen untuk mengembangkan potensi mahasiswa melalui berbagai kegiatan akademik dan non-akademik. Website ini dibuat sebagai sarana informasi dan komunikasi untuk seluruh anggota KSM UMU Buton.</p>
+                            <div class="text-center my-5 text-black">
+                                <h1 class="fw-bolder mb-3 text-white text-shadow" style="text-shadow: 2px 2px 6px #000, 0 0 2px #333;">Selamat Datang di Website KSM UMU Buton</h1>
+                                <ul class="lead fw-normal text-white text-shadow mb-4" style="text-shadow: 2px 2px 6px #000, 0 0 2px #333; list-style-type: disc; text-align: left; margin: 0 auto; max-width: 700px;">
+                                    <p>Kami adalah Kelompok Studi Mahasiswa Universitas Muslim Buton (KSM UMU Buton) yang berkomitmen mengembangkan potensi mahasiswa melalui kegiatan akademik dan non-akademik. Website ini menjadi sarana informasi dan komunikasi untuk seluruh anggota KSM UMU Buton.</p>
+                                </ul>
                                 <a class="btn btn-primary btn-lg shadow-lg" href="#scroll-target">Read our story</a>
                             </div>
                         </div>
@@ -115,10 +118,30 @@
                     <div class="row gx-5 row-cols-1 row-cols-md-3">
                         <!-- Card 1 -->
                         <div class="col-lg-6 mb-5">
-                            <div class="card h-100 shadow border-0">
+                            <div class="card h-100 shadow border-0 animate-on-scroll slide-in-left">
                                 <img class="card-img-top" src="assets/images/buah.jpg" alt="Produk 1" />
                                 <div class="card-body p-4">
-                                    <div class="badge bg-danger bg-gradient rounded-pill mb-2">Not Ready</div>
+                                    <div class="badge bg-danger bg-gradient rounded-pill mb-2 countdown-badge">Not Ready</div>
+                                    <script>
+                                        // Sinkronkan badge dengan countdown
+                                        function updateBadgesByCountdown() {
+                                            const now = new Date().getTime();
+                                            const targetDate = new Date('June 28, 2025 00:00:00').getTime();
+                                            document.querySelectorAll('.countdown-badge').forEach(function(badge) {
+                                                if (now >= targetDate) {
+                                                    badge.textContent = 'Ready';
+                                                    badge.classList.remove('bg-danger');
+                                                    badge.classList.add('bg-success');
+                                                } else {
+                                                    badge.textContent = 'Not Ready';
+                                                    badge.classList.remove('bg-success');
+                                                    badge.classList.add('bg-danger');
+                                                }
+                                            });
+                                        }
+                                        setInterval(updateBadgesByCountdown, 1000);
+                                        updateBadgesByCountdown();
+                                    </script>
                                     <h5 class="card-title mb-3">Buah Segar Lokal</h5>
                                     <p class="card-text mb-0">Buah-buahan segar hasil panen harga terjangkau.</p>
                                 </div>
@@ -143,7 +166,27 @@
                             <div class="card h-100 shadow border-0">
                                 <img class="card-img-top" src="assets/images/buah.jpg" alt="Produk 1" />
                                 <div class="card-body p-4">
-                                    <div class="badge bg-danger bg-gradient rounded-pill mb-2">Not Ready</div>
+                                    <div class="badge bg-danger bg-gradient rounded-pill mb-2 countdown-badge">Not Ready</div>
+                                    <script>
+                                        // Sinkronkan badge dengan countdown
+                                        function updateBadgesByCountdown() {
+                                            const now = new Date().getTime();
+                                            const targetDate = new Date('June 28, 2025 00:00:00').getTime();
+                                            document.querySelectorAll('.countdown-badge').forEach(function(badge) {
+                                                if (now >= targetDate) {
+                                                    badge.textContent = 'Ready';
+                                                    badge.classList.remove('bg-danger');
+                                                    badge.classList.add('bg-success');
+                                                } else {
+                                                    badge.textContent = 'Not Ready';
+                                                    badge.classList.remove('bg-success');
+                                                    badge.classList.add('bg-danger');
+                                                }
+                                            });
+                                        }
+                                        setInterval(updateBadgesByCountdown, 1000);
+                                        updateBadgesByCountdown();
+                                    </script>
                                     <h5 class="card-title mb-3">Buah Segar Lokal</h5>
                                     <p class="card-text mb-0">Buah-buahan segar hasil panen harga terjangkau.</p>
                                 </div>
@@ -184,7 +227,7 @@
             <section class="py-5 bg-light">
                 <div class="container px-5 my-5">
                     <div class="text-center">
-                        <h2 class="fw-bolder">5 June 2025</h2>
+                        <h2 class="fw-bolder">28 Juni 2025</h2>
                         <p class="lead fw-normal text-muted mb-5">estimasi pembuahan buah naga!</p>
                     </div>
                     <div class="text-center">
@@ -195,7 +238,16 @@
 
             <script>
                 const countdownElement = document.getElementById('countdown');
-                const targetDate = new Date('June 5, 2025 00:00:00').getTime();
+                const targetDate = new Date('June 28, 2025 00:00:00').getTime();
+
+                function setProdukReady() {
+                    // Ganti semua badge Not Ready menjadi Ready
+                    document.querySelectorAll('.badge.bg-danger').forEach(function(badge) {
+                        badge.textContent = 'Ready';
+                        badge.classList.remove('bg-danger');
+                        badge.classList.add('bg-success');
+                    });
+                }
 
                 function updateCountdown() {
                     const now = new Date().getTime();
@@ -203,6 +255,7 @@
 
                     if (timeLeft <= 0) {
                         countdownElement.textContent = "The day has arrived!";
+                        setProdukReady(); // Panggil fungsi untuk mengganti badge
                         clearInterval(timerInterval);
                         return;
                     }
