@@ -52,9 +52,13 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-8 col-xxl-6">
                             <div class="text-center my-5 text-black">
-                                <h1 class="fw-bolder mb-3 text-white text-shadow" style="text-shadow: 2px 2px 6px #000, 0 0 2px #333;">Selamat Datang di Website KSM UMU Buton</h1>
+                                <h1 id="glitch-title" class="fw-bolder mb-3 text-white text-shadow glitch-text" style="text-shadow: 2px 2px 6px #000, 0 0 2px #333;">
+                                    Selamat Datang di Website KSM UMU Buton
+                                </h1>
                                 <ul class="lead fw-normal text-white text-shadow mb-4" style="text-shadow: 2px 2px 6px #000, 0 0 2px #333; list-style-type: disc; text-align: left; margin: 0 auto; max-width: 700px;">
-                                    <p>Kami adalah Kelompok Studi Mahasiswa Universitas Muslim Buton (KSM UMU Buton) yang berkomitmen mengembangkan potensi mahasiswa melalui kegiatan akademik dan non-akademik. Website ini menjadi sarana informasi dan komunikasi untuk seluruh anggota KSM UMU Buton.</p>
+                                    <p id="glitch-desc">
+                                        Kami adalah Kelompok Studi Mahasiswa Universitas Muslim Buton (KSM UMU Buton) yang berkomitmen mengembangkan potensi mahasiswa melalui kegiatan akademik dan non-akademik. Website ini menjadi sarana informasi dan komunikasi untuk seluruh anggota KSM UMU Buton.
+                                    </p>
                                 </ul>
                                 <a class="btn btn-primary btn-lg shadow-lg" href="#scroll-target">Read our story</a>
                             </div>
@@ -69,7 +73,78 @@
                     50% { background-position: 100% 50%; }
                     100% { background-position: 0% 50%; }
                 }
+                /* Glitch effect */
+                .glitch-text {
+                    position: relative;
+                    display: inline-block;
+                }
+                .glitch-text.glitch-animate {
+                    animation: glitch 0.5s linear;
+                }
+                @keyframes glitch {
+                    0% {
+                        text-shadow: 2px 0 red, -2px 0 blue;
+                        transform: translate(0, 0);
+                    }
+                    20% {
+                        text-shadow: 2px 2px red, -2px -2px blue;
+                        transform: translate(-2px, 2px);
+                    }
+                    40% {
+                        text-shadow: -2px 2px red, 2px -2px blue;
+                        transform: translate(2px, -2px);
+                    }
+                    60% {
+                        text-shadow: 2px -2px red, -2px 2px blue;
+                        transform: translate(-2px, 2px);
+                    }
+                    80% {
+                        text-shadow: -2px -2px red, 2px 2px blue;
+                        transform: translate(2px, -2px);
+                    }
+                    100% {
+                        text-shadow: 2px 0 red, -2px 0 blue;
+                        transform: translate(0, 0);
+                    }
+                }
             </style>
+            <script>
+                // Array of texts for title and description
+                const glitchTitles = [
+                    "Selamat Datang di Website KSM UMU Buton",
+                    "Bersama Membangun Potensi Mahasiswa",
+                    "KSM UMU Buton: Kreatif, Inovatif, Kolaboratif"
+                ];
+                const glitchDescs = [
+                    "Kami adalah Kelompok Studi Mahasiswa Universitas Muslim Buton (KSM UMU Buton) yang berkomitmen mengembangkan potensi mahasiswa melalui kegiatan akademik dan non-akademik. Website ini menjadi sarana informasi dan komunikasi untuk seluruh anggota KSM UMU Buton.",
+                    "KSM UMU Buton menyediakan wadah bagi mahasiswa untuk belajar, berinovasi, dan berkontribusi dalam pengembangan pertanian modern di Buton.",
+                    "Dapatkan informasi terbaru, kegiatan, dan peluang pengembangan diri bersama KSM UMU Buton di website ini."
+                ];
+
+                let glitchIndex = 0;
+                const glitchTitleEl = document.getElementById('glitch-title');
+                const glitchDescEl = document.getElementById('glitch-desc');
+
+                function showGlitchText() {
+                    // Add glitch animation class
+                    glitchTitleEl.classList.add('glitch-animate');
+                    glitchDescEl.classList.add('glitch-animate');
+                    // Change text after a short delay for effect
+                    setTimeout(() => {
+                        glitchTitleEl.textContent = glitchTitles[glitchIndex];
+                        glitchDescEl.textContent = glitchDescs[glitchIndex];
+                    }, 200);
+                    // Remove glitch animation class after animation
+                    setTimeout(() => {
+                        glitchTitleEl.classList.remove('glitch-animate');
+                        glitchDescEl.classList.remove('glitch-animate');
+                    }, 600);
+                    // Next index
+                    glitchIndex = (glitchIndex + 1) % glitchTitles.length;
+                }
+
+                setInterval(showGlitchText, 2000);
+            </script>
             <!-- About section one-->
             <section class="py-5 bg-light" id="scroll-target">
                 <div class="container px-5 my-5">
@@ -271,6 +346,18 @@
                 const timerInterval = setInterval(updateCountdown, 1000);
                 updateCountdown();
             </script>
+            <!-- Text berjalan (marquee) -->
+            <div style="overflow-x: auto; white-space: nowrap; margin-top: 20px;">
+                <span style="display: inline-block; min-width: 100%; animation: marquee 15s linear infinite; font-weight: bold; color: #198754; font-size: 1.2rem;">
+                    Info: Estimasi panen buah naga pada 28 Juni 2025. Silakan hubungi kami untuk pemesanan atau pertanyaan lebih lanjut!
+                </span>
+            </div>
+            <style>
+                @keyframes marquee {
+                    0%   { transform: translateX(100%);}
+                    100% { transform: translateX(-100%);}
+                }
+            </style></div>
             <!-- About section two-->
             <section class="py-5">
                 <div class="container px-5 my-5">
