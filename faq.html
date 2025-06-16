@@ -42,7 +42,10 @@
                                         <canvas id="canvas" style="display: none;"></canvas>
                                         <div class="d-grid gap-2">
                                             <button class="btn btn-primary" id="startCamera" onclick="initCamera()">Buka Kamera</button>
-                                            <button class="btn btn-success" id="captureImage">Ambil Gambar</button>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" id="plantQuery" placeholder="Tanyakan tentang penyakit tanaman...">
+                                                <button class="btn btn-success" id="captureImage" onclick="captureAndAnalyzeWithQuery()">Ambil & Analisis</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
